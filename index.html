@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="shortcut icon"
+      href="src/images/favicon_io/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <title>PsiAntonieta</title>
+  </head>
+  <body>
+    <nav
+      class="fixed top-0 z-50 bg-white dark:bg-gray-900 w-full border-b border-gray-200 dark:border-gray-600"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="#home" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img
+            src="src/images/logo/logo-light.png"
+            class="block dark:hidden w-32 h-auto"
+            alt="Psiantonieta Logo"
+          />
+          <img
+            src="src/images/logo/logo-dark.png"
+            class="hidden dark:block w-32 h-auto"
+            alt="Psiantonieta Logo"
+          />
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-1 rtl:space-x-reverse">
+          <a
+            href="https://api.whatsapp.com/send?phone=5581998926420&text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta."
+          >
+            <button
+              type="button"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Contatar
+            </button>
+          </a>
+          <button
+            id="theme-toggle"
+            type="button"
+            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+          >
+            <svg
+              id="theme-toggle-dark-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+            <svg
+              id="theme-toggle-light-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Abra o menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="#home"
+                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              >
+                Início
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              >
+                Sobre
+              </a>
+            </li>
+            <li>
+              <a
+                href="#services"
+                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              >
+                Serviços
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              >
+                Contatos
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="home" class="bg-white dark:bg-gray-900 pt-20">
+      <div
+        class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12"
+      >
+        <h1
+          class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
+        >
+          Olá, Parabéns <br />
+          pela
+          <span class="text-blue-700 dark:text-blue-500">decisão!</span>
+        </h1>
+        <p
+          class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
+        >
+          Aqui não existe besteira, o que é importante para você também é
+          importante para mim.
+        </p>
+        <div
+          class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
+        >
+          <a
+            href="#about"
+            class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center dark:text-white rounded-lg focus:ring-4 focus:ring-primary-300"
+          >
+            Conhecer
+            <svg
+              class="ml-2 -mr-1 w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </a>
+          <a
+            href="https://www.instagram.com/reel/DBXKgWdppf7"
+            class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+          >
+            <svg
+              class="mr-2 -ml-1 w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"
+              ></path>
+            </svg>
+            Assistir vídeo
+          </a>
+        </div>
+        <div
+          class="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-12 pt-8"
+        >
+          <div
+            class="flex flex-wrap justify-center items-center text-gray-500 sm:justify-between"
+          >
+            <a
+              href="https://www.instagram.com/antonieta.ssa/profilecard/?igsh=aHV6cmpmbXJvNTFq"
+              class="text-3xl font-bold mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a
+              href="https://api.whatsapp.com/send?phone=5581998926420&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta."
+              class="text-3xl font-bold mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="bg-white dark:bg-gray-900">
+      <div
+        class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6"
+      >
+        <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+          <span class="text-blue-700 dark:text-blue-500"> Sobre mim </span>
+          <h2
+            class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          >
+            Antonieta Santos
+          </h2>
+          <p class="mb-4">
+            Para além do exercício profissional da Psicologia, sou, antes de
+            tudo, um ser humano que também sente, vive e experimenta as
+            delicadezas e complexidades da existência. Ser Psicóloga não me
+            exime da condição de ser gente. Por isso, compreendo, com
+            sensibilidade e empatia, as dores, alegrias e contradições próprias
+            da experiência humana. Sou pernambucana, filha, irmã, esposa, amiga
+            e amante da brisa do mar. Carrego em mim múltiplas dimensões da vida
+            que se entrelaçam com minha prática profissional.
+          </p>
+          <p>
+            Além da vivência pessoal, atuo como Psicóloga devidamente registrada
+            no Conselho Regional de Psicologia – CRP 02/28301.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4 mt-8">
+          <img
+            class="w-full rounded-lg"
+            src="src/images/about/3.jpg"
+            alt="Psicóloga Antonieta Santos"
+          />
+          <img
+            class="mt-4 w-full lg:mt-10 rounded-lg"
+            src="src/images/about/2.jpg"
+            alt="Psicóloga Antonieta Santos"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="bg-white dark:bg-gray-900">
+      <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        <span class="text-blue-700 dark:text-blue-500"> Serviços </span>
+        <div class="max-w-screen-md mb-8 lg:mb-16">
+          <h2
+            class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          >
+            Áreas de Atuação
+          </h2>
+          <p class="text-gray-500 sm:text-xl dark:text-gray-400">
+            A seguir, apresento informações adicionais acerca dos meus serviços,
+            a fim de proporcionar-lhe maior clareza e segurança em sua decisão
+            de iniciar o tratamento comigo.
+          </p>
+        </div>
+        <div
+          class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0"
+        >
+          <div>
+            <div
+              class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-500 lg:h-12 lg:w-12 dark:bg-blue-600"
+            >
+              <i class="fa-solid fa-book-medical text-white"></i>
+            </div>
+            <h3 class="mb-2 text-xl font-bold dark:text-white">Psicoterapia</h3>
+            <p class="text-gray-500 dark:text-gray-400">
+              Acompanhamento para diversos quadros, como ansiedade, depressão e
+              questões emocionais gerais.
+            </p>
+          </div>
+
+          <div>
+            <div
+              class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-500 lg:h-12 lg:w-12 dark:bg-blue-600"
+            >
+              <i class="fa-solid fa-brain text-white"></i>
+            </div>
+            <h3 class="mb-2 text-xl font-bold dark:text-white">
+              Terapia Cognitivo-Comportamental
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400">
+              Foco em modificar padrões de pensamento disfuncionais para
+              melhorar as emoções e comportamentos.
+            </p>
+          </div>
+
+          <div>
+            <div
+              class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-500 lg:h-12 lg:w-12 dark:bg-blue-600"
+            >
+              <i class="fa-solid fa-people-group text-white"></i>
+            </div>
+            <h3 class="mb-2 text-xl font-bold dark:text-white">
+              Terapia para Casais
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400">
+              Auxílio na comunicação e resolução de conflitos para fortalecer o
+              relacionamento.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessions" class="bg-white dark:bg-gray-900">
+      <div
+        class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6"
+      >
+        <div
+          class="font-light text-gray-500 sm:text-lg dark:text-gray-400 order-2 lg:order-1"
+        >
+          <span class="text-blue-700 dark:text-blue-500">Atendimento</span>
+          <h2
+            class="mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          >
+            Como funcionam as <br />
+            minhas sessões!
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="rounded-lg p-6">
+              <div
+                class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-blue-500 text-white mx-auto lg:mx-0"
+              >
+                <i class="fa-solid fa-user-check text-2xl"></i>
+              </div>
+              <h3
+                class="mb-4 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Atendimento Particular
+              </h3>
+              <ul class="space-y-2 text-gray-500 dark:text-gray-400">
+                <li class="flex items-center space-x-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 dark:text-green-400"
+                  ></i>
+                  <span
+                    >É necessário que o paciente esteja em local privado.</span
+                  >
+                </li>
+                <br />
+                <li class="flex items-center space-x-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 dark:text-green-400"
+                  ></i>
+                  <span
+                    >É necessário um dispositivo eletrônico como celular,
+                    computador ou tablet.</span
+                  >
+                </li>
+                <br />
+                <li class="flex items-center space-x-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 dark:text-green-400"
+                  ></i>
+                  <span>É sugerido o uso de fones de ouvido.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="rounded-lg p-6">
+              <div
+                class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-blue-500 text-white mx-auto lg:mx-0"
+              >
+                <i class="fa-solid fa-circle-info text-2xl"></i>
+              </div>
+              <h3
+                class="mb-4 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Informações
+              </h3>
+              <p class="mb-4 font-light text-gray-500 dark:text-gray-400">
+                Sessões de 50 minutos, realizadas semanalmente, em atendimento
+                particular.
+              </p>
+              <p class="font-light text-gray-500 dark:text-gray-400">
+                Não são aceitos convênios, mas é possível solicitar reembolso ao
+                plano de saúde mediante recibo.
+              </p>
+              <br />
+              <p class="font-light text-gray-500 dark:text-gray-400">
+                Os horários disponíveis são determinados conforme minha agenda,
+                solicite disponibilidade.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="default-carousel"
+          class="relative w-full order-1 lg:order-2"
+          data-carousel="static"
+        >
+          <div class="relative h-96 overflow-hidden rounded-lg md:h-96">
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img
+                src="src/images/about/1.jpg"
+                class="w-full h-96 object-cover rounded-lg"
+                alt="Psicóloga Antonieta Santos"
+              />
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <div
+                class="grid grid-cols-1 gap-4 mt-8 bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg"
+              >
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                  Sessões Terapêuticas
+                </h3>
+                <p class="font-light text-gray-500 dark:text-gray-400">
+                  O Conselho Federal de Psicologia não permite gravação das
+                  sessões, portanto todo o encontro será pautado na ética e
+                  sigilo das informações fornecidas pelo paciente.
+                </p>
+                <p class="font-light text-gray-500 dark:text-gray-400">
+                  Recomenda-se que o paciente tenha uma caneta e um bloco de
+                  notas para anotações de aprendizados durante a sessão.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+          >
+            <button
+              type="button"
+              class="flex items-center justify-center p-2 cursor-pointer group focus:outline-none"
+              data-carousel-prev
+            >
+              <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full group-hover:bg-white/50 dark:group-hover:bg-gray-800/50 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+              >
+                <svg
+                  class="w-4 h-4 text-gray-900 dark:text-white rtl:rotate-180"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 6 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 1 1 5l4 4"
+                  />
+                </svg>
+                <span class="sr-only">Previous</span>
+              </span>
+            </button>
+            <button
+              type="button"
+              class="flex items-center justify-center p-2 cursor-pointer group focus:outline-none"
+              data-carousel-next
+            >
+              <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full group-hover:bg-white/50 dark:group-hover:bg-gray-800/50 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+              >
+                <svg
+                  class="w-4 h-4 text-gray-900 dark:text-white rtl:rotate-180"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 6 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 9 4-4-4-4"
+                  />
+                </svg>
+                <span class="sr-only">Next</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-white dark:bg-gray-900">
+      <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+          <h2
+            class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          >
+            Entre em Contato
+          </h2>
+          <p
+            class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400"
+          >
+            Estou aqui para te ajudar a iniciar sua jornada de bem-estar. Entre
+            em contato para agendar uma consulta.
+          </p>
+        </div>
+        <div class="flex justify-center gap-8 mb-6 lg:mb-16 md:grid-cols-2">
+          <div
+            class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="p-5">
+              <h3
+                class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                <a
+                  href="https://api.whatsapp.com/send?phone=5581998926420&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta."
+                  >WhatsApp</a
+                >
+              </h3>
+              <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">
+                Fale comigo diretamente por mensagem.
+              </p>
+              <ul class="flex space-x-4 sm:mt-0">
+                <li>
+                  <a
+                    href="https://api.whatsapp.com/send?phone=5581998926420&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta."
+                    class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                  >
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="p-5">
+              <h3
+                class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                <a
+                  href="https://www.instagram.com/antonieta.ssa/profilecard/?igsh=aHV6cmpmbXJvNTFq"
+                  >Instagram</a
+                >
+              </h3>
+              <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">
+                Conecte-se e acompanhe meu trabalho.
+              </p>
+              <ul class="flex space-x-4 sm:mt-0">
+                <li>
+                  <a
+                    href="https://www.instagram.com/antonieta.ssa/profilecard/?igsh=aHV6cmpmbXJvNTFq"
+                    class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                  >
+                    <i class="fa-brands fa-instagram text-2xl"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="p-4 bg-white sm:p-6 dark:bg-gray-800">
+      <div class="mx-auto max-w-screen-xl pt-3 pb-3">
+        <div class="flex flex-col items-center justify-center text-center">
+          <a href="#" class="flex items-center mb-6">
+            <img
+              src="src/images/logo/logo-light.png"
+              class="block dark:hidden w-32 h-auto"
+              alt="PsiAntonieta Logo"
+            />
+            <img
+              src="src/images/logo/logo-dark.png"
+              class="hidden dark:block w-32 h-auto"
+              alt="PsiAntonieta Logo"
+            />
+          </a>
+        </div>
+        <hr
+          class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+        />
+        <div class="flex sm:items-center sm:justify-center">
+          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            Copyright © 2025 - Todos os direitos reservados.
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="src/js/script.js"></script>
+  </body>
+</html>
